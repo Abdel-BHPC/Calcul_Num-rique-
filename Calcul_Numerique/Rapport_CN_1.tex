@@ -1,5 +1,4 @@
 \documentclass[12pt]{report}
-\usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage[francais]{babel}
@@ -30,6 +29,7 @@
 \usepackage{lastpage}
 \usepackage{systeme}
 \usepackage{listings}
+
 
 \definecolor{anti-flashwhite}{rgb}{0.95, 0.95, 0.96}
 \definecolor{aliceblue}{rgb}{0.94, 0.97, 1.0}
@@ -113,7 +113,148 @@
 \renewcommand{\footrulewidth}{1pt}
 
 \chapter{Prise en main de Scilab}
+\section{Introduction}
+L'objectif de ce TD/TP est de prendre les automatismes sur la rédaction des algorithmes et leur analyse. Pour cela nous allons écrire des algorithmes numérique et evaluer leur complexité arithmétique et en terme de stockage mémoire et puis comparer leurs performances afin d'implémenter des algorithmes efficace en terme de performance.
+\section{Exercice 1 TP}
+Le but de cet exercice est de se familiariser avec le langage Scilab et savoir les notion basic qu'on aura besoin par la suite. \\[0.4cm]
+1. Écrivez un vecteur $x$ à 1 ligne et 4 colonnes.
+\begin{lstlisting}[]
+-->x=[1,2,3,4]
+x  = 
+
+1.   2.   3.   4.
+\end{lstlisting}
+2. Écrivez un vecteur y à 4 lignes et 1 colonnes
+\begin{lstlisting}[]
+-->y=[1;2;3;4]
+y  = 
+
+1.
+2.
+3.
+4.
+\end{lstlisting}
+3. les opérations
+\begin{lstlisting}[]
+-->x=[1;2;3;4]
+x  = 
+
+1.
+2.
+3.
+4.
+
+-->z=x+y
+
+z  = 
+
+2.
+4.
+6.
+8.
 
 
-                       
+-->x=[1,2,3,4]
+x  = 
+
+1.   2.   3.   4.
+
+-->s=x*y
+s  = 
+
+30.
+\end{lstlisting}
+4. la fonction size() 
+\begin{lstlisting}[]
+-->size(x)
+ans  =
+
+1.   4.
+
+-->size(y)
+ans  =
+
+4.   1.
+\end{lstlisting}
+5. la norme 2 de x avec la fonction norme
+\begin{lstlisting}[]
+-->norm(x)
+ans  =
+
+5.4772256
+\end{lstlisting}
+6. matrice A à 4 lignes et 3 colonnes
+\begin{lstlisting}[]
+-->A=[1,2,3;4,5,6;7,8,9;10,11,12]
+A  = 
+
+1.    2.    3. 
+4.    5.    6. 
+7.    8.    9. 
+10.   11.   12.
+\end{lstlisting}
+7. la transposée de A.
+\begin{lstlisting}[]
+-->A'
+ans  =
+
+1.   4.   7.   10.
+2.   5.   8.   11.
+3.   6.   9.   12.
+\end{lstlisting}
+8. les opérations de bases avec deux matrices carrées A et B
+\begin{lstlisting}[]
+-->B=[1,1,1;2,2,2;3,3,3;4,4,4]
+B  = 
+
+1.   1.   1.
+2.   2.   2.
+3.   3.   3.
+4.   4.   4.
+
+-->A
+A  = 
+
+1.    2.    3. 
+4.    5.    6. 
+7.    8.    9. 
+10.   11.   12.
+
+La somme:
+
+-->c=A+B
+c  = 
+
+2.    3.    4. 
+6.    7.    8. 
+10.   11.   12.
+14.   15.   16.
+
+Le produit: 
+
+-->D=A*B'
+D  = 
+
+6.    12.   18.   24. 
+15.   30.   45.   60. 
+24.   48.   72.   96. 
+33.   66.   99.   132.
+
+La soustraction: 
+
+-->E=A-B
+E  = 
+
+0.   1.   2.
+2.   3.   4.
+4.   5.   6.
+6.   7.   8.
+\end{lstlisting}
+9. le conditionnement de A avec la fonction cond().
+\begin{lstlisting}[]
+-->cond(A)
+ans  =
+
+9.882D+15
+\end{lstlisting}                 
 \end{document}

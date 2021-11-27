@@ -1,0 +1,139 @@
+1. Écrivez un vecteur x à 1 ligne et 4 colonnes.
+
+-->x=[1,2,3,4]
+ x  = 
+
+   1.   2.   3.   4.
+
+2. Écrivez un vecteur y à 4 lignes et 1 colonnes
+
+-->y=[1;2;3;4]
+ y  = 
+
+   1.
+   2.
+   3.
+   4.
+   
+3. les opérations
+
+-->x=[1;2;3;4]
+ x  = 
+
+   1.
+   2.
+   3.
+   4.
+   
+-->z=x+y
+
+ z  = 
+
+   2.
+   4.
+   6.
+   8.
+
+
+-->x=[1,2,3,4]
+ x  = 
+
+   1.   2.   3.   4.
+
+-->s=x*y
+ s  = 
+
+   30.
+
+4. la fonction size() 
+
+-->size(x)
+ ans  =
+
+   1.   4.
+
+-->size(y)
+ ans  =
+
+   4.   1.
+   
+5. la norme 2 de x avec la fonction norme
+
+-->norm(x)
+ ans  =
+
+   5.4772256
+
+6. matrice A à 4 lignes et 3 colonnes
+
+-->A=[1,2,3;4,5,6;7,8,9;10,11,12]
+ A  = 
+
+   1.    2.    3. 
+   4.    5.    6. 
+   7.    8.    9. 
+   10.   11.   12.
+
+7. la transposée de A.
+
+-->A'
+ ans  =
+
+   1.   4.   7.   10.
+   2.   5.   8.   11.
+   3.   6.   9.   12.
+   
+8. les opérations de bases avec deux matrices carrées A et B
+
+-->B=[1,1,1;2,2,2;3,3,3;4,4,4]
+ B  = 
+
+   1.   1.   1.
+   2.   2.   2.
+   3.   3.   3.
+   4.   4.   4.
+
+-->A
+ A  = 
+
+   1.    2.    3. 
+   4.    5.    6. 
+   7.    8.    9. 
+   10.   11.   12.
+
+La somme :
+
+-->c=A+B
+ c  = 
+
+   2.    3.    4. 
+   6.    7.    8. 
+   10.   11.   12.
+   14.   15.   16.
+
+Le produit 
+
+-->D=A*B'
+ D  = 
+
+   6.    12.   18.   24. 
+   15.   30.   45.   60. 
+   24.   48.   72.   96. 
+   33.   66.   99.   132.
+
+La soustraction 
+
+-->E=A-B
+ E  = 
+
+   0.   1.   2.
+   2.   3.   4.
+   4.   5.   6.
+   6.   7.   8.
+   
+9. le conditionnement de A avec la fonction cond().
+
+-->cond(A)
+ ans  =
+
+   9.882D+15
