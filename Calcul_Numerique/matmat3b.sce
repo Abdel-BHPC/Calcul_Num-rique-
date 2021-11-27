@@ -1,4 +1,5 @@
 //definition de la fonction matmat3b
+
 function [C]= matmat3b(A,B)
  m=size(A,1);
  p=size(B,1);
