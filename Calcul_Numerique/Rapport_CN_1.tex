@@ -605,5 +605,67 @@ function [x]= lsolve(L,b)
  end 
 endfunction 
 \end{lstlisting}          
-         
+ 
+3. Test et validation des algorithme\\
+
+Nous allons utiliser les deux fonctions \textbf{tril()} et \textbf{triu()} qui permettant d'extraire une matrice triangulaire inférieur ou supérieur.
+
+\textbf{usolve :}\\
+
+\begin{lstlisting}
+ -->A
+A  = 
+
+0.7560439   0.6653811   0.685731      
+0.0002211   0.6283918   0.8782165      
+0.3303271   0.8497452   0.068374
+\end{lstlisting} 
+
+\begin{lstlisting}
+ -->U=tril(A)
+U  = 
+
+0.7560439   0.          0.      
+0.0002211   0.6283918   0.      
+0.3303271   0.8497452   0.068374
+\end{lstlisting} 
+
+\begin{lstlisting}
+-->b=A*xex 
+b  = 
+
+1.3377668
+1.0127856
+0.5407226
+\end{lstlisting} 
+
+\begin{lstlisting}
+-->usolve(U,b)
+ans  =
+
+1.7694302
+1.6117104
+7.9083027
+\end{lstlisting} 
+
+\textbf{lsolve :}\\
+
+\begin{lstlisting}
+-->L=triu(A)
+L  = 
+
+0.7560439   0.6653811   0.685731 
+0.          0.6283918   0.8782165
+0.          0.          0.068374 
+\end{lstlisting} 
+
+\begin{lstlisting}
+-->lsolve(L,b)
+ans  =
+
+1.7694302
+1.6117104
+7.9083027
+\end{lstlisting}
+
 \end{document}
