@@ -163,6 +163,9 @@
 
 
 \chapter{Introduction}
+\textbf{Introduction}\\
+
+
 L'objectif de TD/TP 2 est de prendre les automatismes sur la rédaction des algorithmes et leur analyse. Pour cela nous allons écrire des algorithmes numérique et évaluer leur complexité arithmétique et en terme de stockage mémoire et puis comparer leurs performances afin d'implémenter des algorithmes efficace en terme de performance.\\
 
 Pour le TD/TP 3 l'objectif est de savoir différentes type d'algorithme de résolution d'un système linéaire, ainsi comprendre les performances et les limites de chaque algorithme et puis comparer les performances.\\
@@ -170,7 +173,7 @@ Pour le TD/TP 3 l'objectif est de savoir différentes type d'algorithme de réso
 \textbf{Outil utilisé}\\[0.5cm]
 1. Scilab\\
 2. Latex\\
-3. 
+
 
 
 \chapter{TD/TP 2 Calcul Numérique}
@@ -399,7 +402,8 @@ ans  =
 8.2596760 
 \end{lstlisting}           
           
-6. Test avec differentes tailles\\
+6. Test avec differentes tailles :\\
+
 Pour refaire les 5 points précedentes j'ai creer le script en desous et à chaque fois je change la taille.  
 \begin{lstlisting}
 
@@ -694,5 +698,160 @@ ans  =
 1.6117104
 7.9083027
 \end{lstlisting}
+
+\section{Exercice 2 TP Gauss}
+ Le principe de la méthode de Gauss est de se ramener, par des opérations simples, à un système triangulaire équivalent, qui sera donc facile à inverse.\\
+
+1. l’algorithme de résolution par élimination de Gauss sans pivotage.
+
+\begin{lstlisting}
+A=rand(3,3)
+b=rand(1:3)
+b=b'
+function [x]= gausskij3b(A,b)
+ n = size(A,1);
+ x = zeros(n,1);
+ for k = 1 : n - 1
+  for i = k + 1 : n
+   mik = A(i, k)/A(k, k);
+   b(i) = b(i) - mik * b(k);
+   for j = k + 1 : n
+    A(i, j) = A(i, j) - mik * A(k, j);
+   end 
+  end 
+ end 
+x=usolve(A,b);
+endfunction
+\end{lstlisting}
+2. test et validation\\
+
+Nous allons resoudre le systeme $Ax=b$ en utilisant la fonction $Backslash$ et la methode de gauss.\\
+\begin{lstlisting}
+-->A=rand(3,3)
+A  = 
+
+0.7560439   0.6653811   0.685731 
+0.0002211   0.6283918   0.8782165
+0.3303271   0.8497452   0.068374 
+\end{lstlisting}
+
+\begin{lstlisting}
+-->b=rand(1:3)'
+b  = 
+
+0.9329616
+0.2146008
+0.312642 
+\end{lstlisting}
+
+\begin{lstlisting}
+-->x=A\b
+x  = 
+
+-0.7943407
+0.6160788
+2.3259083 
+\end{lstlisting}
+
+\begin{lstlisting}
+-->gausskij3b(A,b)
+ans  =
+
+-0.7943407
+0.6160788
+2.3259083 
+\end{lstlisting}
+
+Les deux methodes donnes les meme resultats.
+
+\section{Exercice 3 TP LU}
+
+L’idée de la factorisation de la matrice $A$, est l’écrire comme un produit $A = LU$, où $L$ est triangulaire inférieure et U triangulaire supérieure et on reformule alors le système $Ax = b$ sous la forme $LUx = b$ et on résout maintenant deux systèmes faciles à résoudre car triangulaires : $Ly = b$ et $Ux = y$. La factorisation $LU$ de la matrice découle immédiatement de l’algorithme de Gauss.\\
+
+1.  l’algorithme de factorisation LU \\
+
+\begin{lstlisting}
+function [L,U]=mylu3b(A)
+ n = size(A,1);
+ L=zeros(n,n);
+ U=zeros(n,n);
+ for k = 1 : n - 1
+  for i = k + 1 : n
+   A(i, k) = A(i, k)/A(k, k);
+  end 
+  for i = k + 1 : n
+   for j = k + 1 : n
+    A(i, j) = A(i, j) - A(i, k) * A(k, j);
+   end 
+  end 
+ end
+ L = tril(A); 
+ U = triu(A);
+endfunction
+\end{lstlisting}
+
+2. Test et validation 
+
+\begin{lstlisting}
+-->A=rand(3,3)
+A  = 
+
+0.7560439   0.6653811   0.685731 
+0.0002211   0.6283918   0.8782165
+0.3303271   0.8497452   0.068374 
+
+-->[l,u]=lu(A)
+l  = 
+
+1.          0.          0.
+0.0002925   1.          0.
+0.4369153   0.8898959   1.
+u  = 
+
+0.7560439   0.6653811   0.685731 
+0.          0.6281972   0.8780159
+0.          0.         -1.0125751
+
+-->l*u
+ans  =
+
+0.7560439   0.6653811   0.685731 
+0.0002211   0.6283918   0.8782165
+0.3303271   0.8497452   0.068374 
+\end{lstlisting}
+Calcul de l'erreur commise sur la factorisation $LU : A - LU$
+\begin{lstlisting}
+-->Er=A-LU
+Er  = 
+
+0.   0.   0.
+0.   0.   0.
+0.   0.   0.
+\end{lstlisting}
+
+4. La methode de pivot partiel
+\begin{lstlisting}
+function [P,L,U]=mylu(A)
+ n=size(A,1)
+ P=zeros(n,n)
+ P(n,n)=1
+ for k=1:n-1
+  pivot_max=max(abs(A(k:n,k)))
+  P(k,find(pivot_max==A(k:n,k),1))=1
+  A([k find(pivot_max==A(k:n,k),1)],:)=A([find(pivot_max==A(k:n,k),1) k],: )
+  for i=k+1:n
+   A(i,k)=A(i,k)/A(k,k)
+    for j=k+1:n 
+     A(i,j)=A(i,j)-(A(i,k)/A(k,k))*A(k,j)
+    end
+  end
+ end
+ U=triu(A)
+ L=tril(A)
+ for l=1:n
+ L(l,l)=1
+ endfunction
+\end{lstlisting}
+
 
 \end{document}
