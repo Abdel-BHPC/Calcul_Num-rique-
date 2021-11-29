@@ -1,4 +1,4 @@
-function [L,U]=mylu3b(A)
+function [LU]=mylu3b(A)
  n = size(A,1);
  L=zeros(n,n);
  U=zeros(n,n);
@@ -13,6 +13,14 @@ function [L,U]=mylu3b(A)
     end 
   end 
  end
- L = tril(A); 
+
+ n2 = n^2;
+
+ L = tril(A);
+ L(1:n+1:n2) = 1;
+ 
  U = triu(A);
+
+ LU = L * U;
+ 
 endfunction

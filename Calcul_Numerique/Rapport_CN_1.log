@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.11.17)  28 NOV 2021 23:43
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.11.17)  29 NOV 2021 19:37
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1321,66 +1321,67 @@ Underfull \hbox (badness 10000) in paragraph at lines 543--572
 
  []
 
-<graphe.jpg, id=347, 562.1pt x 421.575pt>
+[9]
+<graphe.jpg, id=362, 562.1pt x 421.575pt>
 File: graphe.jpg Graphic file (type jpg)
 <use graphe.jpg>
-Package pdftex.def Info: graphe.jpg  used on input line 575.
+Package pdftex.def Info: graphe.jpg  used on input line 590.
 (pdftex.def)             Requested size: 337.2626pt x 252.94695pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 575--576
-
- []
-
-[9]
-Underfull \hbox (badness 10000) in paragraph at lines 577--578
+Underfull \hbox (badness 10000) in paragraph at lines 590--591
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 579--580
+Underfull \hbox (badness 10000) in paragraph at lines 592--593
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 594--595
 
  []
 
 [10 <./graphe.jpg>]
 Partie 3.
 
-Underfull \hbox (badness 10000) in paragraph at lines 593--594
+Underfull \hbox (badness 10000) in paragraph at lines 608--609
 
  []
 
 [11
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 621--622
+Underfull \hbox (badness 10000) in paragraph at lines 636--637
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 625--626
+Underfull \hbox (badness 10000) in paragraph at lines 640--641
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 663--664
+Underfull \hbox (badness 10000) in paragraph at lines 678--679
 
  []
 
 [12] 
 AED: lastpage setting LastPage
 [13]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 683.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 683.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 698.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 698.
  (./Rapport_CN_1.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 683.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 683.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 698.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 698.
 Package rerunfilecheck Info: File `Rapport_CN_1.out' has not changed.
 (rerunfilecheck)             Checksum: B11C68B5B78AA2C0D140AC2E1F4DE264;537.
  ) 
 Here is how much of TeX's memory you used:
- 27076 strings out of 481239
- 486640 string characters out of 5920376
+ 27095 strings out of 481239
+ 486904 string characters out of 5920376
  1112555 words of memory out of 5000000
- 41462 multiletter control sequences out of 15000+600000
+ 41468 multiletter control sequences out of 15000+600000
  601072 words of font info for 67 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  68i,8n,83p,880b,2296s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1397,10 +1398,10 @@ hare/texmf/fonts/type1/public/lm/lmssbo10.pfb></usr/share/texmf/fonts/type1/pub
 lic/lm/lmsso17.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/sha
 re/texmf/fonts/type1/public/lm/lmtt12.pfb></usr/share/texlive/texmf-dist/fonts/
 type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on Rapport_CN_1.pdf (14 pages, 444486 bytes).
+Output written on Rapport_CN_1.pdf (14 pages, 446914 bytes).
 PDF statistics:
- 549 PDF objects out of 1000 (max. 8388607)
- 495 compressed objects within 5 object streams
- 311 named destinations out of 1000 (max. 500000)
+ 565 PDF objects out of 1000 (max. 8388607)
+ 510 compressed objects within 6 object streams
+ 324 named destinations out of 1000 (max. 500000)
  180 words of extra memory for PDF output out of 10000 (max. 10000000)
 
