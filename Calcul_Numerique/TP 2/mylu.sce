@@ -15,6 +15,6 @@ function [P,L,U]=mylu(A)
   end
   U=triu(A)
   L=tril(A)
-  for l=1:n
-  L(l,l)=1
+  L=eye(n,n)+tril(A,-1);
+  U=triu(A);
 endfunction
