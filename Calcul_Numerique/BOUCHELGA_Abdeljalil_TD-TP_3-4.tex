@@ -31,6 +31,8 @@
 \usepackage{listings}
 \usepackage{xcolor}
 \usepackage{textcomp}
+\usepackage{hyperref}
+
 
 \lstset{upquote=true,
 	columns=flexible,
@@ -159,6 +161,8 @@
 
 \pagebreak
 \normalsize
+\hypersetup{pdfborder=0 0 0}
+\tableofcontents
 \renewcommand{\footrulewidth}{1pt}
 
 
@@ -177,7 +181,7 @@ Pour le TD/TP 3 l'objectif est de savoir différentes type d'algorithme de réso
 
 
 \chapter{TD/TP 2 Calcul Numérique}
-\section{Exercice 1 TP}
+\section{Exercice 1 TP Prise en main de Scilab}
 Le but de cet exercice est de se familiariser avec le langage Scilab et savoir les notion basic qu'on aura besoin par la suite. \\[0.4cm]
 1. Écrivez un vecteur $x$ à 1 ligne et 4 colonnes.
 \begin{lstlisting}[]
@@ -919,14 +923,14 @@ ans  =
 
 la fonction lu() de scilab calcule aussi les trois matrices L, U et P telles que P*A = L*U avec U triangulaire supérieure, L triangulaire inférieure et P une matrice de permutation. En comparant les deux fonctions, nous remarquons que les resultats sont les memes. \\[2cm]
 
-\newpage
-\textbf{\LARGE Conclusion}\\
+
+\chapter{Conclusion}\\
 
 
 Le but de ce travail est de mettre en pratique ce que nous avons vu au cours d'algèbre linéaire et à la résolution de système linéaire pas des méthodes directes. Portant savoir faire l'analyse et la comparaison des algorithmes en termes de complexité arithmétique et en stockage memoire ainsi leur precision numérique afin de faire le meilleur choix d'algorithme efficace. \\[3cm]
 
 
-\textbf{\Large Annexe}\\
+\section*{Annexe}\\
 
 Dépot github : 
 \url{https://github.com/Abdel-BHPC/Calcul_Num-rique-.git}
